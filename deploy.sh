@@ -6,7 +6,7 @@ echo "🚀 Building and deploying hey-sheldon ..."
 UNAME_OUT="$(uname -s)"
 
 case "${UNAME_OUT}" in
-    Linux*)  export CONFIG_PATH="/home/pi/Sheldon/Hey-Sheldon/server/config.json";;
+    Linux*)  export CONFIG_PATH="/home/pi/Hey-Sheldon/server/config.json";;
     Darwin*) export CONFIG_PATH="$HOME/Documents/Offline-Repos/Hey-Sheldon/server/config.json";;
     *)       echo "❌ Unsupported OS: ${UNAME_OUT}" && exit 1;;
 esac
