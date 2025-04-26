@@ -1,0 +1,10 @@
+# Global ignores
+node_modules
+
+# Metadata
+Dockerfile
+docker-compose.yml
+deploy.sh
+.git
+.gitignore
+*.md

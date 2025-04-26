@@ -1,5 +1,16 @@
 const Database = require('better-sqlite3');
-const db = new Database('./hey.db');
+const db = new Database('./data/hey.db');
+
+const fs = require('fs');
+const path = require('path');
+
+// Ensure data/ directory exists
+const dataDir = path.join(__dirname, 'data');
+if (!fs.existsSync(dataDir)) {
+  fs.mkdirSync(dataDir);
+    console.log(`[INIT] 📂 Created missing 'data/' directory`);
+}
+
 
 // Create tables on startup
 db.exec(`

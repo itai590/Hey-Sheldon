@@ -1,0 +1,48 @@
+services:
+  hey-server:
+    container_name: hey-sheldon-server
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    volumes:
+      - ${CONFIG_PATH}:/app/server/config.json
+      - /dev/snd:/dev/snd
+      - hey-db:/app/server/hey.db
+    ports:
+      - "5100:5100"
+    environment:
+      - TZ=Asia/Jerusalem
+
+  hey-client:
+    container_name: hey-sheldon-client
+    image: nginx:alpine
+    restart: always
+    ports:
+      - "3000:80"
+    volumes:
+      - ./client/build:/usr/share/nginx/html:ro
+
+
+volumes:
+  hey-db:
+
+
+
+
+
+
+
+#version: '3.9'
+#services:
+#  hey:
+#    container_name: hey-sheldon-backend
+#    image: hey-sheldon:latest
+#    restart: always
+#    command: npm start
+#    volumes:
+#      - /home/pi/Sheldon/config.json:/app/config.json
+#    devices:
+#      - /dev/snd:/dev/snd
+#    environment:
+#      - TZ=Asia/Jerusalem
