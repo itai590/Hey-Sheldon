@@ -4,21 +4,21 @@ set -e
 TAG=$(date +"%d%b%y_%H%M.%S")
 export TAG=$TAG
 
-echo "🧹 Cleaning old containers if exist..."
+echo -e "\n🧹 Cleaning old containers if exist..."
 docker rm -f hey-sheldon-server || true
 docker rm -f hey-sheldon-client || true
 
-echo "🛑 Stopping old containers..."
+echo -e "\n🛑 Stopping old containers..."
 docker compose down
 
-echo "🏗 Building containers..."
+echo -e "\n🏗 Building containers..."
 docker compose build
 
-echo " 🏷️ Tagging hey-sheldon-server image with tag $TAG..."
+echo -e "\n🏷️ Tagging hey-sheldon-server image with tag $TAG..."
 docker tag hey-sheldon-server:latest hey-sheldon-server:"$TAG"
 
-echo "🚀 Starting containers..."
+echo -e "\n🚀 Starting containers..."
 docker compose up -d
 
-echo "📜 Showing live logs..."
+echo -e "\n📜 Showing live logs..."
 docker compose logs -f
