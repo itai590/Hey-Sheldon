@@ -57,10 +57,16 @@ class SoundDetector extends EventEmitter {
     this.recorder = child;
     child.stderr.on("data", function (buf) { body += buf; });
 
-    child.on("exit", () => {
-      var {max,duration,rms} = this._parse(body);
+    child.on('exit', () => {
+      const { max, duration, rms } = this._parse(body);
 
-      this.emit("detected", {max,duration,rms});
+      if (typeof max === 'undefined' && typeof rms === 'undefined' && typeof duration === 'undefined') {
+        console.warn(`${new Date().toString()} | ⚠️  no valid sound detected, skipping...`);
+        setTimeout(() => this._listen(), 500);
+        return;
+      }
+
+      this.emit('detected', { max, duration, rms });
 
       this._listen();
     });

@@ -7,8 +7,9 @@ services:
     restart: always
     volumes:
       - ${CONFIG_PATH}:/app/server/config.json
-      - /dev/snd:/dev/snd
       - hey-db:/app/server/hey.db
+    devices:
+      - /dev/snd:/dev/snd
     ports:
       - "5100:5100"
     environment:
