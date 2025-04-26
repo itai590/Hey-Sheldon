@@ -4,7 +4,7 @@ services:
     image: hey-sheldon-server
     build:
       context: ./server
-      dockerfile: server/Dockerfile
+      dockerfile: Dockerfile
     restart: always
     volumes:
       - ./server/config.json:/app/server/config.json
