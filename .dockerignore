@@ -1,5 +1,10 @@
 # Global ignores
-node_modules
+node_modules/
+
+# Ignore Local
+server/node_modules
+client/node_modules
+client/build
 
 # Metadata
 Dockerfile
@@ -8,3 +13,4 @@ deploy.sh
 .git
 .gitignore
 *.md
+README.md
