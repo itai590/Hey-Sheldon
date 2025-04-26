@@ -55,7 +55,7 @@ const app = express();
 const PORT = 5100;
 
 app.use(cors());
-app.use(express.json()); // <== ADD THIS to parse JSON bodies
+app.use(express.json());
 
 // === API ===
 
