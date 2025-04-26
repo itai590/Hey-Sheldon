@@ -12,7 +12,6 @@ docker compose down
 echo "🏗 Building and Starting containers..."
 docker compose build
 docker tag hey-sheldon-server:latest hey-sheldon-server:"$TAG"
-
 docker compose up -d
 
 echo "📜 Showing live logs..."

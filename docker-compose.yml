@@ -1,6 +1,7 @@
 services:
   server:
     container_name: hey-sheldon-server
+    image: hey-sheldon-server
     build:
       context: .
       dockerfile: Dockerfile
