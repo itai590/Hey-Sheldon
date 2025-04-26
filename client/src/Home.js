@@ -23,7 +23,7 @@ export default function Home() {
       p={2}
       className="fill"
       style={{
-        backgroundColor: '#f0f0f0',
+        backgroundColor: 'transparent',
         minHeight: '100vh',
         display: 'flex',
         flexDirection: 'column',
@@ -45,7 +45,7 @@ export default function Home() {
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
-            backgroundColor: '#fff'
+            backgroundColor: 'rgba(255,255,255,0.09)'
           }}
         >
           <img
@@ -56,7 +56,7 @@ export default function Home() {
         </div>
       </Center>
 
-      <h1 style={{ marginTop: '2rem', marginBottom: '1rem' }}>
+      <h1 style={{ marginTop: '2rem', marginBottom: '1rem',  color: 'white' }}>
         <span role="img" aria-label="dog">🐶</span> Bark History
       </h1>
 
@@ -75,11 +75,12 @@ export default function Home() {
                 key={msg.id}
                 style={{
                   marginBottom: '1rem',
-                  background: 'white',
+                  background: 'rgba(0,0,0,0.44)',
                   padding: '1rem',
                   borderRadius: '8px',
                   boxShadow: '0 0 10px rgba(0,0,0,0.1)',
-                  textAlign: 'center'
+                  textAlign: 'center',
+                  color: 'white',
                 }}
               >
                 <div><strong>{new Date(msg.update_time || msg.create_time).toLocaleString()}</strong></div>

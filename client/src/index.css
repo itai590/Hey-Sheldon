@@ -4,7 +4,14 @@ html, body {
 
 body {
   margin: 0;
-  background-color: #464846; /* cool gray */
+  background-color: rgba(39, 40, 42, 0.73);;
+}
+
+html, body, #root, main {
+  height: 100%;
+  margin: 0;
+  background-color: rgb(39, 40, 42);
+  font-family: 'Roboto', sans-serif;
 }
 
 .fill {

@@ -1,5 +1,4 @@
 import { useState, useEffect, useRef } from 'react';
-const SERVER_URL = "";
 
 export default function useMessages() {
   const [messages, setMessages] = useState([]);
@@ -8,7 +7,7 @@ export default function useMessages() {
 
   async function loadMessages() {
     try {
-      const res = await fetch(`${SERVER_URL}/api/messages`);
+      const res = await fetch(`http://localhost:5100/api/messages`);
       if (!res.ok) throw new Error('Failed to fetch messages');
       const data = await res.json();
       setMessages(data);
