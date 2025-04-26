@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-TAG=$(date +"%d%b%y-%H%M.%S")
+TAG=$(date +"%d%b%y_%H%M.%S")
 export TAG=$TAG
 
 echo "🧹 Cleaning old containers if exist..."
