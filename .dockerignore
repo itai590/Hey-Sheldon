@@ -4,7 +4,7 @@ node_modules/
 # Ignore Local
 server/node_modules
 client/node_modules
-# client/build
+client/build
 
 # Metadata
 server/Dockerfile

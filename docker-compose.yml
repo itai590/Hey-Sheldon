@@ -18,7 +18,9 @@ services:
 
   client:
     container_name: hey-sheldon-client
-    image: nginx:alpine
+    build:
+      context: ./client
+      dockerfile: Dockerfile
     restart: always
     ports:
       - "3000:80"

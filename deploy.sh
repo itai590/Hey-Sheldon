@@ -16,6 +16,7 @@ docker compose build
 
 echo -e "\n🏷️ Tagging hey-sheldon-server image with tag $TAG..."
 docker tag hey-sheldon-server:latest hey-sheldon-server:"$TAG"
+docker tag hey-sheldon-client:latest hey-sheldon-client:"$TAG"
 
 echo -e "\n🚀 Starting containers..."
 docker compose up -d
