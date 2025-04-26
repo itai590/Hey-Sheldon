@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-const SERVER_URL = "http://hey-sheldon-server:5100";
+const SERVER_URL = "";
 
 export default function useMessages() {
   const [messages, setMessages] = useState([]);
