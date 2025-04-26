@@ -12,7 +12,8 @@ echo -e "\n🛑 Stopping old containers..."
 docker compose down
 
 echo -e "\n🏗 Building containers..."
-docker compose build
+docker compose build --no-cache
+docker compose build server
 
 
 echo -e "\n🏷️ Tagging hey-sheldon-server image with tag $TAG..."
