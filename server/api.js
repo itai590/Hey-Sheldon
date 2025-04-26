@@ -1,7 +1,6 @@
-// api.js
 const express = require('express');
 const cors = require('cors');
-const db = require('./db'); // reuse your better-sqlite3 db.js
+const db = require('./db');
 
 const app = express();
 const PORT = 5000;

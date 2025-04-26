@@ -1,5 +1,6 @@
 const db = require('./db');
 const EventEmitter = require('events');
+const { v4: uuidv4 } = require('uuid');
 
 const AGGR_TIME = 60; // seconds
 const BARK_TEXT = "Woof!";
@@ -15,33 +16,24 @@ const sendNotification = () => {
   const now = new Date().toISOString();
 
   if (context.timer) {
-    // Append and update
+    // Append to current session
     context.text += " " + BARK_TEXT;
-
-    const updateStmt = db.prepare(`
-      UPDATE messages
-      SET text = ?, update_time = ?
-      WHERE id = ?
-    `);
-    updateStmt.run(context.text, now, 'sheldon');
-
-    console.log("updated hey!");
+    console.log("appended bark");
   } else {
-    // Start new message
+    // New bark detected
     context.text = BARK_TEXT;
+    console.log("new bark started");
+  }
 
-    const insertStmt = db.prepare(`
-      INSERT INTO messages (id, text, create_time, update_time)
-      VALUES (?, ?, ?, ?)
-      ON CONFLICT(id) DO UPDATE SET
-        text = excluded.text,
-        update_time = excluded.update_time
-    `);
-    insertStmt.run('sheldon', context.text, now, now);
+  // Always insert a new message
+  const insertStmt = db.prepare(`
+    INSERT INTO messages (id, text, create_time, update_time)
+    VALUES (?, ?, ?, ?)
+  `);
+  insertStmt.run(uuidv4(), context.text, now, now);
 
-    console.log("sent hey!");
-
-    // Set aggregation timer
+  // Set aggregation timer
+  if (!context.timer) {
     context.timer = setTimeout(() => {
       context.text = "";
       context.timer = null;
