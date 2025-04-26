@@ -66,3 +66,37 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `yarn build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+
+
+
+my
+### Sends a notification when 3 Barks are detected within 60 seconds above the MAX_RMS_AMPLITUDE.
+
+
+## Server
+### Startup
+- On mac
+  `brew install sox`
+
+- On Linux
+  `apt-get install sox alsa-lib alsa-utils`
+
+### Run
+`rm -rf node_modules`
+
+`npm cache clean --force`
+
+`npm install`
+
+`node server.js` or `node start`
+
+
+
+
+## Client
+`rm -rf node_modules`
+
+`npm cache clean --force`
+
+`npm install --legacy-peer-deps`
