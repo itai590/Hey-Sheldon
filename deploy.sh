@@ -1,15 +1,15 @@
 #!/bin/bash
 set -e
 
-echo "🚀 Building and deploying hey-sheldon ..."
+TAG="v$(date +%Y%m%d%H%M%S)"
+echo "🚀 Building and deploying hey-sheldon with tag $TAG..."
 
 echo "🛑 Stopping old containers..."
 docker compose down
 
 echo "🏗 Building and Starting containers..."
-docker compose up --build -d "$@"
-# docker compose build
-# docker compose up -d
+docker compose build --build-arg TAG=$TAG
+docker compose up -d
 
 echo "📜 Showing live logs..."
 docker compose logs -f

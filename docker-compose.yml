@@ -4,6 +4,9 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+      args:
+        TAG: ${TAG}
+        image: hey-sheldon-server:${TAG}
     restart: always
     volumes:
       - server/config.json:/app/server/config.json
