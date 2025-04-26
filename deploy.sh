@@ -2,6 +2,8 @@
 set -e
 
 TAG="v$(date +%Y%m%d%H%M%S)"
+export TAG=$TAG
+
 echo "🚀 Building and deploying hey-sheldon with tag $TAG..."
 
 echo "🛑 Stopping old containers..."
