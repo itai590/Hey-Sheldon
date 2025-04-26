@@ -10,8 +10,8 @@ echo "🛑 Stopping old containers..."
 docker compose down
 
 echo "🏗 Building and Starting containers..."
-docker compose build --build-arg TAG="$TAG"
-docker tag hey-sheldon-server:"$TAG" hey-sheldon-server:latest
+docker compose build
+docker tag hey-sheldon-server:latest hey-sheldon-server:"$TAG"
 
 docker compose up -d
 
