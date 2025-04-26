@@ -1,12 +1,9 @@
 services:
-  hey-server:
+  server:
     container_name: hey-sheldon-server
     build:
       context: .
       dockerfile: Dockerfile
-      args:
-        TAG: ${TAG}
-        image: hey-sheldon-server:${TAG}
     restart: always
     volumes:
       - ./server/config.json:/app/server/config.json
@@ -18,7 +15,7 @@ services:
     environment:
       - TZ=Asia/Jerusalem
 
-  hey-client:
+  client:
     container_name: hey-sheldon-client
     image: nginx:alpine
     restart: always
