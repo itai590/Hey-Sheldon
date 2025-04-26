@@ -9,7 +9,7 @@ services:
         image: hey-sheldon-server:${TAG}
     restart: always
     volumes:
-      - server/config.json:/app/server/config.json
+      - ./server/config.json:/app/server/config.json
       - hey-db:/app/server/hey.db
     devices:
       - /dev/snd:/dev/snd
