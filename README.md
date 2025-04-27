@@ -1,5 +1,7 @@
 # Hey Sheldon
+![img_1.png](img_1.png)
 
+<br>
 A sound detection and bark monitoring app, running on a lightweight Node.js backend and a blazing-fast Nginx frontend.
 
 Sends a notification when 3 loud barks are detected within 60 seconds, based on the MAX_RMS_AMPLITUDE threshold.
@@ -36,9 +38,9 @@ Hey-Sheldon/
 - Node.js 20+ for server development
 - A USB microphone
 - A Raspberry Pi (optional, but recommended for deployment)
-- install sox, alasa-lib, alsa-utils (for sound detection)
+- sox, alasa-lib, alsa-utils (for sound detection)
 
-## Startup
+### Startup
 
 - On mac
 
@@ -51,6 +53,8 @@ Hey-Sheldon/
 ```shell
   apt-get install sox alsa-lib alsa-utils
 ```
+
+---
 
 ## Quick Start
 
@@ -131,8 +135,8 @@ The backend server uses the following environment variables:
   ```
 
   Then visit `http://localhost:3000`.
-
-
+<br>
+<br>
 - **Backend**:  
   For backend development:
 
@@ -145,7 +149,6 @@ The backend server uses the following environment variables:
   ````
 
   Then visit `http://localhost:5100`.
-
 ---
 
 ## Troubleshooting
