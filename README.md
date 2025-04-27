@@ -235,7 +235,6 @@ The backend server uses the following environment variables:
 
 This project is licensed under the [MIT License](LICENSE).
 
----
 
 <br>
 
