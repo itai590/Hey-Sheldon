@@ -12,13 +12,27 @@
 
 ### **Features**
 
-- 🐶 **Bark Detection** | Listens for sounds via microphone by analyzing `MAX_RMS_AMPLITUDE`.
+- 🐶 **Bark Detection** | Listens for sounds via microphone by analyzing `MAX_RMS_AMPLITUDE`. 
+
+
 - 🧠 **Smart Session Grouping** | Aggregates 3 barks within a rolling 60-second window.
+
+
 - 🛠️ **Node.js Backend** | Powers sound analysis and provides API endpoints.
+
+
 - 🎨 **React.js Frontend** | Optimized and served lightning-fast with Nginx.
+
+
 - 🐕‍🦺 **Real-Time Bark History** | Displays a real-time Bark History.
+
+
 - 🗂️ **Lightweight SQLite Persistence** | Simple, reliable local storage of events.
+
+
 - 🚀 **Instant Setup** | Minimal configuration — get started in seconds.
+
+
 - 🐳 **Fully Dockerized** | One command to deploy across any environment.
 
 <br>
