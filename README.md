@@ -225,7 +225,7 @@ The backend server uses the following environment variables:
 
 ## Future Improvements
 
-- [ ] **Add SSL to Production Frontend**  
+- [X] **Add SSL to Production Frontend**  
   Implement HTTPS on the production frontend using Let's Encrypt for secure access.
 
 - [ ] **Enhanced Client-Side Error Handling**  
