@@ -11,25 +11,21 @@ class SoundDetector extends EventEmitter {
     this.config = {
       PERCENTAGE_START : '10%',
       PERCENTAGE_END   : '10%'
-    }
+    };
+    this.noSoundLogged = false;
   }
 
   start() {
-
     if(this._started) {
       return;
     }
-
     this._started = true;
-
     this._listen();
   }
 
 
   stop(){
-
     this._started = false;
-
     if(this.recorder) {
       this.recorder.kill();
       this.recorder = null;
@@ -61,13 +57,16 @@ class SoundDetector extends EventEmitter {
       const { max, duration, rms } = this._parse(body);
 
       if (typeof max === 'undefined' && typeof rms === 'undefined' && typeof duration === 'undefined') {
-        console.warn(`${new Date().toString()} | ⚠️  no valid sound detected, skipping...`);
+        if (!this.noSoundLogged) {
+          console.warn(`${new Date().toString()} | ⚠️  no valid sound detected, skipping...`);
+          this.noSoundLogged = true;
+        }
         setTimeout(() => this._listen(), 500);
         return;
       }
 
+      this.noSoundLogged = false;
       this.emit('detected', { max, duration, rms });
-
       this._listen();
     });
   }
@@ -88,6 +87,5 @@ class SoundDetector extends EventEmitter {
     return this._started;
   }
 }
-
 
 module.exports = SoundDetector;
