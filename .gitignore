@@ -27,3 +27,6 @@ yarn-error.log*
 firestore.rules
 firestore.indexes.json
 firebase.json
+
+
+.idea
