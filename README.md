@@ -6,7 +6,7 @@
 
 **Audio Detection and Bark Notification System**
 
-![Build Status](https://img.shields.io/badge/build-passing-brightgreen) ![License](https://img.shields.io/badge/license-MIT-blue) ![OS](https://img.shields.io/badge/platform-Docker-lightgrey) ![OS](https://img.shields.io/badge/OS-Linux,macOS-yellow) ![Node.js](https://img.shields.io/badge/node-20-blue) ![Node.js](https://img.shields.io/badge/node-16-yellow) ![React](https://img.shields.io/badge/react-18-blue) ![Version](https://img.shields.io/badge/version-1.0.0-brightgreen)
+![Build Status](https://img.shields.io/badge/build-passing-brightgreen) ![License](https://img.shields.io/badge/license-MIT-blue) ![OS](https://img.shields.io/badge/platform-Docker-lightgrey) ![OS](https://img.shields.io/badge/OS-Linux,macOS-yellow) ![Node.js](https://img.shields.io/badge/node-20-blue) ![Node.js](https://img.shields.io/badge/node-16-yellow) ![React](https://img.shields.io/badge/react-16.12.0-yellow) ![Version](https://img.shields.io/badge/version-1.0.0-brightgreen)
 
 
 ![Use Case](https://img.shields.io/badge/pet--monitoring-green) ![Use Case](https://img.shields.io/badge/environmental--alerts-green) ![Use Case](https://img.shields.io/badge/audio--events-green)
