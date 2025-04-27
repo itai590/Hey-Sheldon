@@ -34,12 +34,12 @@ services:
   certbot:
     user: root
     image: certbot/certbot
-    container_name: certbot
+    container_name: hey-sheldon-certbot
     volumes:
       - /etc/letsencrypt:/etc/letsencrypt
       - /var/lib/letsencrypt:/var/lib/letsencrypt
     depends_on:
-      - hey-sheldon-client
+      - client
     entrypoint: >
       /bin/sh -c '
         trap exit TERM;
