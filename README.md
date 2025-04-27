@@ -53,7 +53,7 @@ Hey-Sheldon/
 └── README.md            # Project documentation
 ```
 
-
+<br>
 
 ## Setup
 
@@ -81,7 +81,7 @@ Hey-Sheldon/
   apt-get install sox alsa-lib alsa-utils
 ```
 
-
+<br>
 
 ## Quick Start
 
@@ -103,6 +103,7 @@ docker-compose up --build
 
 
 
+<br>
 
 ## How It Works
 
@@ -113,6 +114,7 @@ docker-compose up --build
 | **Database** | SQLite        | Local persistent database (mounted via Docker volume)      |
 
 
+<br>
 
 ## Build Process (Client)
 
@@ -138,7 +140,7 @@ EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
 ```
 
-
+<br>
 
 ## Environment Variables
 
@@ -148,7 +150,7 @@ The backend server uses the following environment variables:
 |:---------|:------------------------------------|
 | `TZ`     | Timezone for logging and scheduling |
 
-
+<br>
 
 ## Development Tools
 
@@ -180,6 +182,7 @@ The backend server uses the following environment variables:
 
   Then visit `http://localhost:5100`.
 
+<br>
 
 ## Troubleshooting
 
@@ -198,6 +201,7 @@ The backend server uses the following environment variables:
   ```
 
 
+<br>
 
 ## Future Improvements
 
@@ -224,12 +228,15 @@ The backend server uses the following environment variables:
 
 - [ ] **Expanded Sound Analytics Dashboard**  
   Add detailed visualizations of detected events, sound waveforms, and detection trends.
----
+
+<br>
 
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
 
 ---
+
+<br>
 
 # 🚀 Happy Bark Monitoring!
