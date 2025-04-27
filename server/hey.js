@@ -9,34 +9,44 @@ const emitter = new EventEmitter();
 
 const context = {
   text: "",
-  timer: null
+  timer: null,
+  id: null,
 };
 
 const sendNotification = () => {
   const now = new Date().toISOString();
 
   if (context.timer) {
-    // Append to current session
+    // Append to current text
     context.text += " " + BARK_TEXT;
     console.log("appended bark");
+
+    // Update existing DB row
+    const updateStmt = db.prepare(`
+      UPDATE messages
+      SET text = ?, update_time = ?
+      WHERE id = ?
+    `);
+    updateStmt.run(context.text, now, context.id);
+
   } else {
-    // New bark detected
-    context.text = BARK_TEXT;
+    // New aggregation window
     console.log("new bark started");
-  }
+    context.text = BARK_TEXT;
+    context.id = uuidv4();
 
-  // Always insert a new message
-  const insertStmt = db.prepare(`
-    INSERT INTO messages (id, text, create_time, update_time)
-    VALUES (?, ?, ?, ?)
-  `);
-  insertStmt.run(uuidv4(), context.text, now, now);
+    // Insert new message into DB
+    const insertStmt = db.prepare(`
+      INSERT INTO messages (id, text, create_time, update_time)
+      VALUES (?, ?, ?, ?)
+    `);
+    insertStmt.run(context.id, context.text, now, now);
 
-  // Set aggregation timer
-  if (!context.timer) {
+    // Start aggregation timer
     context.timer = setTimeout(() => {
       context.text = "";
       context.timer = null;
+      context.id = null;
       emitter.emit('reset');
     }, AGGR_TIME * 1000);
   }
