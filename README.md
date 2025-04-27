@@ -5,11 +5,11 @@
 
 ![Build Status](https://img.shields.io/badge/build-passing-brightgreen) ![License](https://img.shields.io/badge/license-MIT-blue) ![OS](https://img.shields.io/badge/platform-Docker-lightgrey) ![OS](https://img.shields.io/badge/OS-Linux,macOS-yellow) ![Node.js](https://img.shields.io/badge/node-20-blue) ![Node.js](https://img.shields.io/badge/node-16-yellow) ![Version](https://img.shields.io/badge/version-1.0.0-brightgreen)
 
-<br>
-Use Case
 
 ![Use Case](https://img.shields.io/badge/pet--monitoring-green) ![Use Case](https://img.shields.io/badge/environmental--alerts-green) ![Use Case](https://img.shields.io/badge/audio--events-green)
-## Features
+
+
+### **Features**
 
 - [X] Detects "barks" based on sound amplitude (MAX_RMS_AMPLITUDE)
 - [X] Sends a notification when 3 barks are detected within 60 seconds
@@ -21,6 +21,7 @@ Use Case
 
 <br>
 
+### **About**
 
 Hey Sheldon is a lightweight, audio-based event detection platform built for rapid deployment and ease of use.
 
