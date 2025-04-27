@@ -37,7 +37,6 @@ Hey-Sheldon/
 - A USB microphone
 - A Raspberry Pi (optional, but recommended for deployment)
 - install sox, alasa-lib, alsa-utils (for sound detection)
--
 
 ## Startup
 
@@ -67,7 +66,7 @@ docker-compose up --build
 ./deploy.sh
 ```
 
-- Server available at: `http://localhost:5100`
+- Server endpoint at: `http://localhost:5100/api/messages`
 - Frontend available at: `http://localhost:3000`
 
 ---
@@ -144,7 +143,7 @@ The backend server uses the following environment variables:
   npm install
   npm start # or node server.js
   ````
-  
+
   Then visit `http://localhost:5100`.
 
 ---
