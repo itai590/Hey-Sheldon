@@ -38,16 +38,7 @@ services:
     volumes:
       - /etc/letsencrypt:/etc/letsencrypt
       - /var/lib/letsencrypt:/var/lib/letsencrypt
-    depends_on:
-      - client
-    entrypoint: >
-      /bin/sh -c '
-        trap exit TERM;
-        while :; do
-          certbot renew --deploy-hook "docker exec hey-sheldon-client nginx -s reload";
-          sleep 12h & wait $${!};
-        done
-      '
+    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
 
 volumes:
   hey-db:
