@@ -50,7 +50,7 @@ Hey-Sheldon/
 └── README.md            # Project documentation
 ```
 
----
+
 
 ## Setup
 
@@ -78,7 +78,7 @@ Hey-Sheldon/
   apt-get install sox alsa-lib alsa-utils
 ```
 
----
+
 
 ## Quick Start
 
@@ -99,7 +99,7 @@ docker-compose up --build
 - Customize the `MAX_RMS_AMPLITUDE` in `server/config.json` if needed.
 
 
----
+
 
 ## How It Works
 
@@ -109,7 +109,7 @@ docker-compose up --build
 | **Backend**  | Node.js       | Express-based API + sound detection logic                  |
 | **Database** | SQLite        | Local persistent database (mounted via Docker volume)      |
 
----
+
 
 ## Build Process (Client)
 
@@ -135,7 +135,7 @@ EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
 ```
 
----
+
 
 ## Environment Variables
 
@@ -145,7 +145,7 @@ The backend server uses the following environment variables:
 |:---------|:------------------------------------|
 | `TZ`     | Timezone for logging and scheduling |
 
----
+
 
 ## Development Tools
 
@@ -175,7 +175,7 @@ The backend server uses the following environment variables:
   ````
 
   Then visit `http://localhost:5100`.
----
+
 
 ## Troubleshooting
 
@@ -193,9 +193,6 @@ The backend server uses the following environment variables:
   docker-compose up --build
   ```
 
----
-
-## Future Improvements
 
 
 ## Future Improvements
