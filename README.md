@@ -11,13 +11,13 @@ Use Case
 ![Use Case](https://img.shields.io/badge/pet--monitoring-green) ![Use Case](https://img.shields.io/badge/environmental--alerts-green) ![Use Case](https://img.shields.io/badge/audio--events-green)
 ## Features
 
-- Detects "barks" based on sound amplitude (MAX_RMS_AMPLITUDE)
-- Sends a notification when 3 barks are detected within 60 seconds
-- Node.js server for API and sound detection logic
-- React.js client served via optimized Nginx
-- Dockerized for easy deployment
-- Supports local SQLite persistence
-- Minimal configuration, fast startup
+- [X] Detects "barks" based on sound amplitude (MAX_RMS_AMPLITUDE)
+- [X] Sends a notification when 3 barks are detected within 60 seconds
+- [X] Node.js server for API and sound detection logic
+- [X] React.js client served via optimized Nginx
+- [X] Dockerized for easy deployment
+- [X] Supports local SQLite persistence
+- [X] Minimal configuration, fast startup
 
 <br>
 
