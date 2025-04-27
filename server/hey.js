@@ -13,43 +13,66 @@ const context = {
   id: null,
 };
 
-const sendNotification = () => {
-  const now = new Date().toISOString();
+const logTime = (message) => {
+  const now = new Date().toLocaleString('en-GB', {
+    timeZone: 'Asia/Jerusalem',
+    hour12: false,
+  });
+  console.log(`[${now}] ${message}`);
+};
 
+const resetContext = () => {
+  logTime('Timer ended — Resetting context');
+  context.text = "";
+  context.timer = null;
+  context.id = null;
+  emitter.emit('reset');
+};
+
+const startOrRestartTimer = () => {
   if (context.timer) {
-    // Append to current text
-    context.text += " " + BARK_TEXT;
-    console.log("appended bark");
+    clearTimeout(context.timer);
+    logTime('Timer restarted');
+  } else {
+    logTime('Timer started');
+  }
+  context.timer = setTimeout(resetContext, AGGR_TIME * 1000);
+};
 
-    // Update existing DB row
+const sendNotification = () => {
+  const now = new Date().toLocaleString('en-GB', {
+    timeZone: 'Asia/Jerusalem',
+    hour12: false,
+  });
+
+  if (context.id) {
+    // Already aggregating: append new bark
+    context.text += " " + BARK_TEXT;
+    logTime('Appended bark');
+
     const updateStmt = db.prepare(`
       UPDATE messages
       SET text = ?, update_time = ?
       WHERE id = ?
     `);
-    updateStmt.run(context.text, now, context.id);
+    updateStmt.run(context.text, new Date().toISOString(), context.id);
 
   } else {
     // New aggregation window
-    console.log("new bark started");
+    logTime('New bark aggregation started');
     context.text = BARK_TEXT;
     context.id = uuidv4();
 
-    // Insert new message into DB
     const insertStmt = db.prepare(`
       INSERT INTO messages (id, text, create_time, update_time)
       VALUES (?, ?, ?, ?)
     `);
-    insertStmt.run(context.id, context.text, now, now);
-
-    // Start aggregation timer
-    context.timer = setTimeout(() => {
-      context.text = "";
-      context.timer = null;
-      context.id = null;
-      emitter.emit('reset');
-    }, AGGR_TIME * 1000);
+    const nowISO = new Date().toISOString();
+    insertStmt.run(context.id, context.text, nowISO, nowISO);
   }
+
+  // Always start or restart the timer
+  startOrRestartTimer();
 
   return Promise.resolve(); // to keep test-hey.js compatible
 };
