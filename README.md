@@ -32,6 +32,7 @@ The system combines `Node.js` for backend audio processing with a `React.js` fro
 Hey Sheldon is perfectly suited for pet monitoring, environmental alerts, and custom audio event detection scenarios.
 
 ---
+<br>
 
 ## Project Structure
 
