@@ -5,8 +5,10 @@ TAG=$(date +"%d%b%y_%H%M.%S")
 export TAG=$TAG
 
 echo -e "🧹 Cleaning old containers if exist..."
+docker rm -f hey-sheldon-certbot || true
 docker rm -f hey-sheldon-server || true
 docker rm -f hey-sheldon-client || true
+
 
 echo -e "\n🛑 Stopping old containers..."
 docker compose down

@@ -17,6 +17,7 @@ services:
       - TZ=Asia/Jerusalem
 
   client:
+    user: root
     container_name: hey-sheldon-client
     image: hey-sheldon-client
     build:
@@ -24,7 +25,20 @@ services:
       dockerfile: Dockerfile
     restart: always
     ports:
-      - "3000:80"
+      - "80:80"
+      - "443:443"
+    volumes:
+      - /etc/letsencrypt:/etc/letsencrypt
+      - /var/lib/letsencrypt:/var/lib/letsencrypt
+
+  certbot:
+    user: root
+    image: certbot/certbot
+    container_name: hey-sheldon-certbot
+    volumes:
+      - /etc/letsencrypt:/etc/letsencrypt
+      - /var/lib/letsencrypt:/var/lib/letsencrypt
+    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
 
 volumes:
   hey-db:
