@@ -8,19 +8,17 @@
 
 ![Build Status](https://img.shields.io/badge/build-passing-brightgreen) ![License](https://img.shields.io/badge/license-MIT-blue) ![OS](https://img.shields.io/badge/platform-Docker-lightgrey) ![OS](https://img.shields.io/badge/OS-Linux,macOS-yellow) ![Node.js](https://img.shields.io/badge/node-20-blue) ![Node.js](https://img.shields.io/badge/node-16-yellow) ![React](https://img.shields.io/badge/react-16.12.0-yellow) ![Version](https://img.shields.io/badge/version-1.0.0-brightgreen)
 
-
 ![Use Case](https://img.shields.io/badge/pet--monitoring-green) ![Use Case](https://img.shields.io/badge/environmental--alerts-green) ![Use Case](https://img.shields.io/badge/audio--events-green)
 
-
 ### **Features**
-
-- [X] Detects "barks" based on sound amplitude (MAX_RMS_AMPLITUDE)
-- [X] Sends a notification when 3 barks are detected within 60 seconds
-- [X] Node.js server for API and sound detection logic
-- [X] React.js client served via optimized Nginx
-- [X] Dockerized for easy deployment
-- [X] Supports local SQLite persistence
-- [X] Minimal configuration, fast startup
+- 🐶 **Bark Detection** | Listens for sounds via microphone by analyzing `MAX_RMS_AMPLITUDE`.
+- 🧠 **Smart Session Grouping** | Aggregates 3 barks within a rolling 60-second window.
+- 🛠️ **Node.js Backend** | Powers sound analysis and provides API endpoints.
+- 🎨 **React.js Frontend** | Optimized and served lightning-fast with Nginx.
+- 🐕‍🦺 **Real-Time Bark History** | Displays a real-time Bark History.
+- 🗂️ **Lightweight SQLite Persistence** | Simple, reliable local storage of events.
+- 🚀 **Instant Setup** | Minimal configuration — get started in seconds.
+- 🐳 **Fully Dockerized** | One command to deploy across any environment.
 
 <br>
 
@@ -28,9 +26,11 @@
 
 Hey Sheldon is a lightweight, audio-based event detection platform built for rapid deployment and ease of use.
 
-It continuously listens for sound and sends a notification when it detects `3 bark-like` sounds within a `60-second` window.  
+It continuously listens for sound and sends a notification when it detects `3 bark-like` sounds within a `60-second`
+window.
 
-The system combines `Node.js` for backend audio processing with a `React.js` frontend served through `Nginx`, all containerized via `Docker` for hassle-free usage.
+The system combines `Node.js` for backend audio processing with a `React.js` frontend served through `Nginx`, all
+containerized via `Docker` for hassle-free usage.
 
 Hey Sheldon is perfectly suited for pet monitoring, environmental alerts, and custom audio event detection scenarios.
 
@@ -101,8 +101,6 @@ docker-compose up --build
 - Frontend available at: `http://localhost:3000`
 - Customize the `MAX_RMS_AMPLITUDE` in `server/config.json` if needed.
 
-
-
 <br>
 
 ## How It Works
@@ -112,7 +110,6 @@ docker-compose up --build
 | **Frontend** | React + Nginx | Compiled into static files (`build/`) and served via Nginx |
 | **Backend**  | Node.js       | Express-based API + sound detection logic                  |
 | **Database** | SQLite        | Local persistent database (mounted via Docker volume)      |
-
 
 <br>
 
@@ -142,6 +139,15 @@ CMD ["nginx", "-g", "daemon off;"]
 
 <br>
 
+
+## Nginx Configuration (Client)
+
+The client Nginx server serves:
+
+- Static React build
+- Proxies /api/ requests to backend
+  <br>
+
 ## Environment Variables
 
 The backend server uses the following environment variables:
@@ -168,7 +174,6 @@ The backend server uses the following environment variables:
   Then visit `http://localhost:3000`.
 
 
-
 - **Backend**:  
   For backend development:
 
@@ -183,6 +188,7 @@ The backend server uses the following environment variables:
   Then visit `http://localhost:5100`.
 
 <br>
+
 
 ## Troubleshooting
 
@@ -199,7 +205,6 @@ The backend server uses the following environment variables:
   docker-compose down
   docker-compose up --build
   ```
-
 
 <br>
 
