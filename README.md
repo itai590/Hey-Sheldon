@@ -258,4 +258,15 @@ This project is licensed under the [MIT License](LICENSE).
 
 <br>
 
-# 🚀 Happy Bark Monitoring!
+---
+
+## ☕ 🍺 Support
+
+If you enjoyed using **Hey Sheldon**, or if it made your life a little easier —  
+consider buying me a coffee or a beer! 🐾
+
+- [Buy me a Coffee or a Beer ☕ 🍺](https://ko-fi.com/itai590)
+
+Your support helps keep this project barking! 🐶🚀
+
+---
