@@ -4,7 +4,7 @@
 
 ![img_1.png](img_1.png)
 
-**Audio Detection and Bark Notification System**
+**Audio Detection and Bark Notification System for Dog Monitoring**
 
 ![Build Status](https://img.shields.io/badge/build-passing-brightgreen) ![License](https://img.shields.io/badge/license-MIT-blue) ![OS](https://img.shields.io/badge/platform-Docker-lightgrey) ![OS](https://img.shields.io/badge/OS-Linux,macOS-yellow) ![Node.js](https://img.shields.io/badge/node-20-blue) ![Node.js](https://img.shields.io/badge/node-16-yellow) ![React](https://img.shields.io/badge/react-16.12.0-yellow) ![Version](https://img.shields.io/badge/version-1.0.0-brightgreen)
 
