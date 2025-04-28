@@ -8,7 +8,7 @@ services:
     restart: always
     volumes:
       - ./server/config.json:/app/server/config.json
-      - hey-db:/app/server/data/hey.db
+      - hey-db:/app/server/data
     devices:
       - /dev/snd:/dev/snd
     ports:
