@@ -14,7 +14,7 @@ export default function useMessages() {
         abortControllerRef.current = controller;
 
         try {
-            const res = await fetch('http://localhost:5100/api/messages', {signal: controller.signal});
+            const res = await fetch('api/messages', {signal: controller.signal});
             if (!res.ok) throw new Error(`Failed to fetch messages, status: ${res.status}`);
 
             const data = await res.json();
