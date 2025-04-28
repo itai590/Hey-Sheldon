@@ -10,8 +10,7 @@
 
 ![Use Case](https://img.shields.io/badge/pet--monitoring-green) ![Use Case](https://img.shields.io/badge/environmental--alerts-green) ![Use Case](https://img.shields.io/badge/audio--events-green)
 
-### **Features**
-
+## Features
 - 🐶 **Bark Detection** | Listens for sounds via microphone by analyzing `MAX_RMS_AMPLITUDE`. 
 
 
@@ -37,7 +36,7 @@
 
 <br>
 
-### **About**
+## About
 
 Hey Sheldon is a lightweight, audio-based event detection platform built for rapid deployment and ease of use.
 
@@ -49,8 +48,10 @@ containerized via `Docker` for hassle-free usage.
 
 Hey Sheldon is perfectly suited for pet monitoring, environmental alerts, and custom audio event detection scenarios.
 
----
 <br>
+<br>
+
+---
 
 ## Project Structure
 
@@ -226,13 +227,18 @@ The backend server uses the following environment variables:
 ## Future Improvements
 
 - [X] **Add SSL to Production Frontend**  
-  Implement HTTPS on the production frontend using Let's Encrypt for secure access.
+  Implement HTTPS on the production frontend using Let's Encrypt.
+
+
+- [ ] **Integrate AI-Based Bark Detection**  
+    Move beyond basic amplitude checks by training machine learning models to recognize bark patterns.
+
 
 - [ ] **Enhanced Client-Side Error Handling**  
   Improve the React frontend to handle backend or network failures more gracefully.
 
-- [ ] **Integrate AI-Based Bark Detection**  
-  Move beyond basic amplitude checks by training machine learning models to recognize bark patterns.
+
+- [ ] **Upgrade React to version 18+**<br>Update the React frontend to the latest version for improved performance and features and compatibility.
 
 - [ ] **Support Customizable Sound Event Patterns**  
   Allow users to define their own trigger sounds (e.g., claps, whistles) for flexible event detection.
@@ -240,15 +246,17 @@ The backend server uses the following environment variables:
 - [ ] **Real-Time Updates via WebSocket**  
   Push live detection events to the frontend without requiring page refreshes.
 
+
 - [ ] **Frontend-Controlled Sensitivity Adjustment**  
   Let users change sound sensitivity settings directly from the web app.
+
 
 - [ ] **Live Sound Monitoring Graph**  
   Display a real-time audio waveform on the frontend for live sound activity monitoring.
 
+
 - [ ] **Expanded Sound Analytics Dashboard**  
   Add detailed visualizations of detected events, sound waveforms, and detection trends.
-
 <br>
 
 ## License
