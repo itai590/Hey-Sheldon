@@ -62,7 +62,7 @@ export default function Home() {
             </h1>
 
             {error ? (
-                <ErrorBanner message={error}/> // ← USE IT HERE
+                <ErrorBanner message={error}/>
             ) : messages.length === 0 ? (
                 <p style={{marginTop: '1rem'}}>
                     No barks yet... <span role="img" aria-label="sleeping">💤</span>
