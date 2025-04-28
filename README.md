@@ -234,7 +234,7 @@ The backend server uses the following environment variables:
     Move beyond basic amplitude checks by training machine learning models to recognize bark patterns.
 
 
-- [ ] **Upgrade React to version 18+**<br>Update the React frontend to the latest version for improved performance and features and compatibility.
+- [ ] **Upgrade React to version 18+**<br>Update the React frontend to the latest version for improved compatibility and features.
 
 
 - [ ] **Support Customizable Sound Event Patterns**  
