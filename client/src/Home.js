@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {Box} from "@material-ui/core";
 import Center from './components/Center';
-import ErrorBanner from './components/ErrorBanner'; // ← ADD THIS IMPORT
+import ErrorBanner from './components/ErrorBanner';
 import useMessages from './hooks/useMessages';
 
 export default function Home() {
@@ -97,13 +97,13 @@ export default function Home() {
                 {`
           @keyframes pulseRed {
             0% { transform: scale(1); border-color: red; box-shadow: 0 0 10px red; }
-            50% { transform: scale(1.1); border-color: lightgray; box-shadow: 0 0 20px red; }
+            50% { transform: scale(1.1); border-color: rgb(245, 144, 132); box-shadow: 0 0 20px red; }
             100% { transform: scale(1); border-color: red; box-shadow: 0 0 10px red; }
           }
 
           @keyframes pulseGreen {
             0% { transform: scale(1); border-color: green; box-shadow: 0 0 10px green; }
-            50% { transform: scale(1.1); border-color: lightgray; box-shadow: 0 0 20px green; }
+            50% { transform: scale(1.1); border-color: lightgreen; box-shadow: 0 0 20px green; }
             100% { transform: scale(1); border-color: green; box-shadow: 0 0 10px green; }
           }
         `}
