@@ -234,14 +234,12 @@ The backend server uses the following environment variables:
     Move beyond basic amplitude checks by training machine learning models to recognize bark patterns.
 
 
-- [ ] **Enhanced Client-Side Error Handling**  
-  Improve the React frontend to handle backend or network failures more gracefully.
-
-
 - [ ] **Upgrade React to version 18+**<br>Update the React frontend to the latest version for improved performance and features and compatibility.
+
 
 - [ ] **Support Customizable Sound Event Patterns**  
   Allow users to define their own trigger sounds (e.g., claps, whistles) for flexible event detection.
+
 
 - [ ] **Real-Time Updates via WebSocket**  
   Push live detection events to the frontend without requiring page refreshes.
