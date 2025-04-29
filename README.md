@@ -19,7 +19,7 @@
   <img src="https://img.shields.io/badge/node-20-blue" />
   <img src="https://img.shields.io/badge/node-16-yellow" />
   <img src="https://img.shields.io/badge/react-16.12.0-yellow" />
-  <img src="https://img.shields.io/badge/version-1.0.0-brightgreen" />
+  <img src="https://img.shields.io/badge/version-1.0.1-brightgreen" />
 </p>
 
 
