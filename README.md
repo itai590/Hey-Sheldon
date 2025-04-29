@@ -1,8 +1,7 @@
 # Hey Sheldon
 
 ---
-
-![img_1.png](img_1.png)
+![img.png](img.png)
 
 **Audio Detection and Bark Notification System**
 
