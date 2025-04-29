@@ -1,7 +1,7 @@
 # Hey Sheldon
 
 ---
-![img.png](img.png)
+![img_1.png](img_1.png)
 
 **Audio Detection and Bark Notification System for Dog Monitoring**
 
