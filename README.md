@@ -2,7 +2,9 @@
 
 ---
 
-![img_3.png](img_3.png)
+
+
+<img src="path/to/img_3.png" width="200">
 
 **Audio Detection and Bark Notification System for Dog Monitoring**
 
