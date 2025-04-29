@@ -2,15 +2,32 @@
 
 ---
 
+<p align="center">
+  <img src="img.png" width="346" height="687" alt="logo"/>
+</p>
 
 
-<img src="path/to/img_3.png" width="200">
+<h4 align="center">
+  Audio Detection and Bark Notification System for Dog Monitoring
+</h4>
 
-**Audio Detection and Bark Notification System for Dog Monitoring**
+<p align="center">
+  <img src="https://img.shields.io/badge/build-passing-brightgreen" />
+  <img src="https://img.shields.io/badge/license-MIT-blue" />
+  <img src="https://img.shields.io/badge/platform-Docker-lightgrey" />
+  <img src="https://img.shields.io/badge/OS-Linux-green" />
+  <img src="https://img.shields.io/badge/node-20-blue" />
+  <img src="https://img.shields.io/badge/node-16-yellow" />
+  <img src="https://img.shields.io/badge/react-16.12.0-yellow" />
+  <img src="https://img.shields.io/badge/version-1.0.0-brightgreen" />
+</p>
 
-![Build Status](https://img.shields.io/badge/build-passing-brightgreen) ![License](https://img.shields.io/badge/license-MIT-blue) ![OS](https://img.shields.io/badge/platform-Docker-lightgrey) ![OS](https://img.shields.io/badge/OS-Linux,macOS-yellow) ![Node.js](https://img.shields.io/badge/node-20-blue) ![Node.js](https://img.shields.io/badge/node-16-yellow) ![React](https://img.shields.io/badge/react-16.12.0-yellow) ![Version](https://img.shields.io/badge/version-1.0.0-brightgreen)
 
-![Use Case](https://img.shields.io/badge/pet--monitoring-green) ![Use Case](https://img.shields.io/badge/environmental--alerts-green) ![Use Case](https://img.shields.io/badge/audio--events-green)
+<p align="center">
+  <img src="https://img.shields.io/badge/pet--monitoring-green" />
+  <img src="https://img.shields.io/badge/environmental--alerts-green" />
+  <img src="https://img.shields.io/badge/audio--events-green" />
+</p>
 
 ## Features
 - 🐶 **Bark Detection** | Listens for sounds via microphone by analyzing `MAX_RMS_AMPLITUDE`. 
