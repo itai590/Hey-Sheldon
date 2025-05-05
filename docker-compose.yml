@@ -1,14 +1,14 @@
 services:
   server:
-    container_name: hey-sheldon-server
-    image: hey-sheldon-server
+    container_name: hey-sheldon-backend
+    image: hey-sheldon-backend
     build:
-      context: ./server
+      context: backend
       dockerfile: Dockerfile
     restart: always
     volumes:
-      - ./server/config.json:/app/server/config.json
-      - hey-db:/app/server/data
+      - ./server/config.json:/app/backend/config.json
+      - hey-db:/app/backend/data
     devices:
       - /dev/snd:/dev/snd
     ports:
@@ -18,10 +18,10 @@ services:
 
   client:
     user: root
-    container_name: hey-sheldon-client
-    image: hey-sheldon-client
+    container_name: hey-sheldon-frontend
+    image: hey-sheldon-frontend
     build:
-      context: ./client
+      context: frontend
       dockerfile: Dockerfile
     restart: always
     ports:

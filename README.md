@@ -76,14 +76,15 @@ Hey Sheldon is perfectly suited for pet monitoring, environmental alerts, and cu
 
 ```bash
 Hey-Sheldon/
-├── client/              # Frontend (React app, built with Node, served via Nginx)
+├── frontend/              # Frontend (React app, built with Node, served via Nginx)
 │   ├── build/           # Production-ready static files
 │   ├── src/             # Source code
 │   └── nginx.conf       # Nginx configuration for serving the frontend
-├── server/              # Backend (Node.js sound detection server)
+├── backend/              # Backend (Node.js sound detection server)
 │   ├── server.js        # Main server logic
 │   ├── config.json      # Configuration file
 │   └── Dockerfile       # Backend Dockerfile
+│   └── api.js           # API routes
 ├── docker-compose.yml   # Multi-container orchestration
 └── README.md            # Project documentation
 ```
@@ -132,7 +133,7 @@ docker-compose up --build
 ./deploy.sh
 ```
 
-- Server endpoint at: `http://localhost:5100/api/messages`
+- Backend endpoint at: `http://localhost:5100/api/messages`
 - Frontend available at: `http://localhost:3000`
 - Customize the `MAX_RMS_AMPLITUDE` in `server/config.json` if needed.
 
@@ -148,9 +149,9 @@ docker-compose up --build
 
 <br>
 
-## Build Process (Client)
+## Build Process (Frontend)
 
-The frontend (`client/`) uses a **multi-stage Docker build**:
+The frontend (`frontend/`) uses a **multi-stage Docker build**:
 
 1. **Node.js stage**: installs dependencies and builds the React app.
 2. **Nginx stage**: copies the static build output into an Nginx image.
@@ -175,9 +176,9 @@ CMD ["nginx", "-g", "daemon off;"]
 <br>
 
 
-## Nginx Configuration (Client)
+## Nginx Configuration (Frontend)
 
-The client Nginx server serves:
+The frontend Nginx server serves:
 
 - Static React build
 - Proxies /api/ requests to backend
@@ -199,7 +200,7 @@ The backend server uses the following environment variables:
   For local development:
 
   ```bash
-  cd client
+  cd frontend
   rm -rf node_modules
   npm cache clean --force
   npm install --legacy-peer-deps
@@ -213,7 +214,7 @@ The backend server uses the following environment variables:
   For backend development:
 
   ```bash
-  cd server
+  cd backend
   rm -rf node_modules
   npm cache clean --force
   npm install
