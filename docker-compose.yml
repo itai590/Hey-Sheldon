@@ -1,5 +1,5 @@
 services:
-  server:
+  backend:
     container_name: hey-sheldon-backend
     image: hey-sheldon-backend
     build:
@@ -16,7 +16,7 @@ services:
     environment:
       - TZ=Asia/Jerusalem
 
-  client:
+  frontend:
     user: root
     container_name: hey-sheldon-frontend
     image: hey-sheldon-frontend
