@@ -2,12 +2,12 @@
 node_modules/
 
 # Ignore Local
-server/node_modules
-client/node_modules
-client/build
+backend/node_modules
+frontend/node_modules
+frontend/build
 
 # Metadata
-server/Dockerfile
+backend/Dockerfile
 docker-compose.yml
 deploy.sh
 .git

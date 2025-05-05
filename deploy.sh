@@ -6,8 +6,8 @@ export TAG=$TAG
 
 echo -e "🧹 Cleaning old containers if exist..."
 docker rm -f hey-sheldon-certbot || true
-docker rm -f hey-sheldon-server || true
-docker rm -f hey-sheldon-client || true
+docker rm -f hey-sheldon-backend || true
+docker rm -f hey-sheldon-frontend || true
 
 
 echo -e "\n🛑 Stopping old containers..."
@@ -18,9 +18,9 @@ echo -e "\n🏗 Building containers..."
 docker compose build
 
 
-echo -e "\n🏷️ Tagging hey-sheldon-server image with tag $TAG..."
-docker tag hey-sheldon-server:latest hey-sheldon-server:"$TAG"
-docker tag hey-sheldon-client:latest hey-sheldon-client:"$TAG"
+echo -e "\n🏷️ Tagging hey-sheldon-backend image with tag $TAG..."
+docker tag hey-sheldon-backend:latest hey-sheldon-backend:"$TAG"
+docker tag hey-sheldon-frontend:latest hey-sheldon-frontend:"$TAG"
 
 echo -e "\n🚀 Starting containers..."
 docker compose up -d
